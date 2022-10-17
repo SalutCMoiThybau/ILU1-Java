@@ -4,6 +4,8 @@ public class Romain {
 	private String nom;
 	private int force;
 	private int forcePred;
+	private Equipement equipements[];
+	private int nbEquipement = 0;
 	
 	public Romain(String nom, int force) {
 		assert force>0;
@@ -35,11 +37,24 @@ public class Romain {
 		assert forcePred>force;
 	}
 	
+	public void sEquiper(Equipement equipement) {
+		switch (equipement) {
+		case CASQUE:
+			
+			break;
+
+		default:
+			break;
+		}
+	}
+	
 	public static void main(String[] args) {
 		Romain Asterus = new Romain("Astérus", 6);
 		Asterus.parler("Salut je suis Astérus !");
 		Asterus.recevoirCoup(2);
 		Asterus.recevoirCoup(4);
+		
+		System.out.println(Equipement.CASQUE + " " + Equipement.BOUCLIER);
 	}
 	
 }
