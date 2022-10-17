@@ -29,4 +29,12 @@ public class Romain {
 			parler("J'abandonne...");
 		}
 	}
+	
+	public static void main(String[] args) {
+		Romain Asterus = new Romain("Astérus", 6);
+		Asterus.parler("Salut je suis Astérus !");
+		Asterus.recevoirCoup(4);
+		Asterus.recevoirCoup(2);
+	}
+	
 }

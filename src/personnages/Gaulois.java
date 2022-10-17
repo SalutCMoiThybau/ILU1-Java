@@ -37,41 +37,30 @@ public class Gaulois {
 		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
 		romain.recevoirCoup((force / 3)*effetPotion);
 	}
+	
+	public void boirePotion(int forcePotion) {
+		effetPotion = forcePotion;
+		parler("Merci Druide, je sens que ma force est " + effetPotion + " fois décuplée");
+	}
 
 	@Override
 	public String toString() {
 		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 	}
 	
-//	public static void main(String[] args) {
-////		TODO
-//	}
-	
-//	public static void main(String[] args) {
-//		if (condition) {
-//			
-//		} else {
-//
-//		}
-//		
-//		switch (key) {
-//		case value:
-//			
-//			break;
-//
-//		default:
-//			break;
-//		}
-//		
-//		for (int i = 0; i < args.length; i++) {
-//			
-//		}
-//		
-//		do {
-//			
-//		} while (condition);
-//		
-//		
-//	}
+	public static void main(String[] args) {
+		Gaulois Asterix = new Gaulois("Astérix", 8);
+		System.out.println(Asterix);
+		System.out.println(Asterix.nom);
+		
+//		System.out.println(Asterix.prendreParole());
+		Asterix.parler("Salut je suis Astérix !");
+		Romain Asterus = new Romain("Astérus", 6);
+		Asterix.frapper(Asterus);
+		
+		Asterix.boirePotion(2);
+		
+		Asterix.frapper(Asterus);
+	}
 	
 }
