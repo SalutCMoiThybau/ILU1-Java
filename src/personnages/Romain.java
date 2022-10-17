@@ -6,6 +6,7 @@ public class Romain {
 	private int forcePred;
 	private Equipement equipements[];
 	private int nbEquipement = 0;
+	private String texte;
 	
 	public Romain(String nom, int force) {
 		assert force>0;
@@ -38,8 +39,8 @@ public class Romain {
 	}
 	
 	public void sEquiper(Equipement equipement) {
-		switch (equipement) {
-		case CASQUE:
+		switch (nbEquipement) {
+		case 0:
 			
 			break;
 
