@@ -24,7 +24,7 @@ public class Romain {
 	public void recevoirCoup(int forceCoup) {
 		force -= forceCoup;
 		if (force > 0) {
-			parler("Aïe");
+			parler("Aï¿½e !");
 		} else {
 			parler("J'abandonne...");
 		}
