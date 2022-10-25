@@ -4,9 +4,8 @@ public class Romain {
 	private String nom;
 	private int force;
 	private int forcePred;
-	private Equipement equipements[];
+	private Equipement[] equipements = new Equipement[2];
 	private int nbEquipement = 0;
-	private String texte;
 	
 	public Romain(String nom, int force) {
 		assert force>0;
@@ -41,12 +40,27 @@ public class Romain {
 	public void sEquiper(Equipement equipement) {
 		switch (nbEquipement) {
 		case 0:
-			
+			extracted(equipement);
 			break;
-
+		case 1:
+			if (equipements[0]==equipement) {
+				System.out.println("Le soldat " + nom + " possède déjà " + equipement + " !");
+			} else {
+				extracted(equipement);
+			}
+			break;
+		case 2:
+			System.out.println("Le soldat " + nom + " est déjà bien protégé !");
+			break;
 		default:
 			break;
 		}
+	}
+
+	private void extracted(Equipement equipement) {
+		equipements[nbEquipement]=equipement;
+		System.out.println("Le soldat " + nom + " s'équipe avec un " + equipement + ".");
+		nbEquipement++;
 	}
 	
 	public static void main(String[] args) {
@@ -56,6 +70,12 @@ public class Romain {
 		Asterus.recevoirCoup(4);
 		
 		System.out.println(Equipement.CASQUE + " " + Equipement.BOUCLIER);
+		
+		Romain Minus = new Romain("Minus", 6);
+		Minus.sEquiper(Equipement.CASQUE);
+		Minus.sEquiper(Equipement.CASQUE);
+		Minus.sEquiper(Equipement.BOUCLIER);
+		Minus.sEquiper(Equipement.CASQUE);
 	}
 	
 }
